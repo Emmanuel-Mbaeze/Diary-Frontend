@@ -14,7 +14,8 @@ const Journals = () => {
 
   const Posts = async () => {
     const local = "http://localhost:9090";
-    const url = `${local}/api/diary/`;
+    const online = "https://i--jot-backend.herokuapp.com";
+    const url = `${online}/api/diary/`;
     await axios.get(url).then((res) => {
       setPost(res.data.data);
       console.log(res.data.data);

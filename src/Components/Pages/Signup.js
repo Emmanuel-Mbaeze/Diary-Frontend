@@ -40,7 +40,8 @@ const Signup = () => {
     console.log(value);
     const { fullname, email, username, password } = value;
     const local = "http://localhost:9090";
-    const url = `${local}/api/user/register`;
+    const online = "https://i--jot-backend.herokuapp.com";
+    const url = `${online}/api/user/register`;
 
     const formData = new FormData();
     formData.append("fullname", fullname);

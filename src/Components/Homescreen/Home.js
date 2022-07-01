@@ -32,7 +32,8 @@ const Home = () => {
     const { message, title } = val;
 
     const local = "http://localhost:9090";
-    const url = `${local}/api/diary/create/${id}`;
+    const online = "https://i--jot-backend.herokuapp.com";
+    const url = `${online}/api/diary/create/${id}`;
 
     await axios.post(url, { message, title }).then((res) => {
       dispatch(addcontent(res.data.data));
