@@ -35,7 +35,7 @@ const Journals = () => {
             {post?.map((props) => {
               return (
                 <Card key={props._id}>
-                  <Time>8:00</Time>
+                  <Time>{moment(props.createdAt).format("LT")}</Time>
                   <Content>
                     <Hold>
                       <Date>{moment(props.createdAt).fromNow()}</Date>
@@ -103,12 +103,12 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  @media (max-width: 320px) {
-    width: 80%;
+  @media (max-width: 900px) {
+    width: 95%;
     min-height: 76vh;
     margin-top: 15px;
   }
-  @media (min-width: 360px) and (max-width: 428px) {
+  /* @media (min-width: 360px) and (max-width: 428px) {
     width: 80%;
     min-height: 45vh;
     margin-top: 25px;
@@ -117,7 +117,7 @@ const Wrapper = styled.div`
     width: 56%;
     min-height: 70vh;
     margin-top: 25px;
-  }
+  } */
 `;
 const Top = styled.div`
   width: 100%;

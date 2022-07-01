@@ -41,8 +41,8 @@ const LandingPage = () => {
               </h4>
             </Desc>
             <Buttons>
-              <Login to="/Homee">
-                <button>Home</button>
+              <Login to="/Login">
+                <button>Login</button>
               </Login>
               <Register to="/Register">
                 <button>Register</button>
@@ -72,7 +72,7 @@ const Container = styled.div`
   }
 `;
 const Wrapper = styled.div`
-  @media (max-width: 320px) {
+  @media (max-width: 900px) {
     width: 97%;
   }
   width: 75%;
@@ -86,6 +86,9 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const Bgimage = styled.div`
+  @media (max-width: 900px) {
+    width: 98%;
+  }
   min-height: 85vh;
   width: 80%;
   background-image: url("/Ex.png");
@@ -96,13 +99,14 @@ const Bgimage = styled.div`
   border-radius: 20px;
 `;
 const Left = styled.div`
-  @media (max-width: 320px) {
+  @media (max-width: 500px) {
     display: none;
   }
   min-height: 100vh;
   width: 42%;
   display: flex;
   flex-wrap: wrap;
+  // background-color: blue;
 
   align-items: center;
   justify-content: center;
@@ -114,14 +118,13 @@ const Holder = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 320px) {
-    // background-color: blue;
+  @media (max-width: 500px) {
     width: 97%;
     min-height: 100vh;
   }
 `;
 const Right = styled.div`
-  @media (max-width: 320px) {
+  @media (max-width: 500px) {
     // background-color: red;
     width: 100%;
   }
@@ -132,18 +135,11 @@ const Right = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Buttons = styled.div`
-  width: 66%;
-  /* background-color: hotpink; */
-  height: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 40px;
-`;
+
 const Desc = styled.div`
   color: #3a3a3a;
-  @media (max-width: 320px) {
+  @media (max-width: 500px) {
+    width: 98%;
     h1 {
       font-size: 15px;
     }
@@ -155,7 +151,7 @@ const Desc = styled.div`
 
 const Text = styled.div`
   text-align: center;
-  @media (max-width: 320px) {
+  @media (max-width: 500px) {
     h1 {
       font-size: 25px;
     }
@@ -163,17 +159,58 @@ const Text = styled.div`
 `;
 const Register = styled(Link)`
   button {
-    padding: 8px 20px;
-    border-radius: 5px;
-    border: 1.5px solid Purple;
+    padding: 12px 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1.9px solid #383838;
+    color: #383838;
+    font-weight: 600;
+
     outline: none;
+    transition: all 950ms;
+  }
+  :hover > button {
+    transform: scale(1.02);
+    color: white;
+
+    background-color: #383838;
+    font-size: 17px;
+    border: none;
   }
 `;
 const Login = styled(Link)`
   button {
-    padding: 8px 20px;
-    border-radius: 5px;
-    border: 1.5px solid Purple;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1.9px solid #383838;
+    color: #383838;
+    font-weight: 600;
+
     outline: none;
+    transition: all 950ms;
   }
+  :hover > button {
+    transform: scale(1.02);
+    color: white;
+
+    background-color: #383838;
+    font-size: 17px;
+    border: none;
+  }
+`;
+const Buttons = styled.div`
+  width: 66%;
+  /* background-color: hotpink; */
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 13px;
+  outline: none;
+
+  font-weight: bold;
 `;

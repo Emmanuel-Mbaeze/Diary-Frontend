@@ -66,56 +66,54 @@ export default Home;
 const Container = styled.div`
   width: 100%;
   min-height: 90vh;
-  /* background-color: black; */
+  /* background-color: red; */
+
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 const Wrapper = styled.form`
-  width: 30%;
-  min-height: 75vh;
+  width: 400px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  /* margin-bottom: 25px; */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 390px) and (max-width: 428px) {
+    width: 380px;
+  }
   @media (max-width: 320px) {
-    width: 85%;
-    min-height: 350px;
-    /* background-color: black; */
+    width: 305px;
   }
-  @media (min-width: 375px) and (max-width: 428px) {
-    width: 75%;
-    min-height: 350px;
-    /* background-color: black; */
-  }
-  @media (min-width: 768px) and (max-width: 834px) {
-    width: 45%;
-    min-height: 350px;
-    /* background-color: black; */
+  @media (min-width: 360px) and (max-width: 375px) {
+    width: 345px;
   }
 `;
 const Card = styled.div`
-  width: 250px;
-  height: 107px;
-
-  background-color: red;
-
+  width: 90%;
+  /* background-color: gold; */
+  height: 160px;
   textarea {
-    width: 250px;
-    min-height: 100px;
-    border: 1.5px solid grey;
+    width: 98%;
+    min-height: 153px;
+    border: 1.5px solid lightgrey;
     outline: none;
     resize: none;
   }
 `;
 const Title = styled.input`
-  width: 250px;
+  width: 90%;
   height: 37px;
-  border: 1px solid purple;
+  border: none;
   outline: none;
   border-radius: 4px;
+  border: 1.5px solid lightgrey;
 `;
 
 const Date = styled.input`
@@ -134,15 +132,22 @@ const Time = styled.input`
 `;
 const Button = styled.div`
   button {
-    padding: 12px 24px;
-    border: 1.5px solid grey;
-    background-color: purple;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-size: 16px;
     color: white;
-    border-radius: 5px;
+    background-color: #383838;
+    cursor: pointer;
+    font-weight: 600;
     outline: none;
+    border: none;
+    transition: all 950ms;
   }
   :hover > button {
-    background-color: transparent;
-    color: black;
+    transform: scale(1.02);
+    color: #383838;
+    border: 1.9px solid #383838;
+    font-size: 17px;
+    background-color: white;
   }
 `;

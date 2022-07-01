@@ -152,16 +152,21 @@ const Buttons = styled.div`
 `;
 const Button = styled.button`
   /* background-color: royalblue; */
-  background-color: orangered;
+  background-color: #383838;
   padding: 14px 22px;
   border-radius: 7px;
   color: white;
   font-size: 20px;
   cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 950ms;
+
   :hover {
-    transform: scale(1.09);
+    transform: scale(1.02);
+
     background-color: white;
-    border: 2px solid orangered;
+    border: 1.9px solid #383838;
     color: black;
     font-size: 20px;
     font-weight: 600;
@@ -201,6 +206,7 @@ const GOOglesignup = styled.div`
   }
   :hover {
     transform: scale(1.04);
+
     background-color: blue;
     border: none;
     color: white;
@@ -241,10 +247,10 @@ const Label = styled.div`
 `;
 const Input = styled.input`
   :focus {
-    border: 1px solid orangered;
+    border: 1px solid #383838;
   }
   font-size: 17px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4); */
   padding: 0 5px;
   width: 100%;
   height: 45px;
