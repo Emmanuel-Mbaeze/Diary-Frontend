@@ -1,20 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "../Global/Globalstate";
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.signedin);
   return (
     <Container>
-      <Wrapper>
-        <Home to="/">Home</Home>
-        <Journals to="/Journals">Journals</Journals>
-        <Explore to="/Explore">Explore</Explore>
-        <Login to="/Login">
-          <button>Login</button>
-        </Login>
-        <Register to="/Register">
-          <button>Register</button>
-        </Register>
-      </Wrapper>
+      {user ? (
+        <Wrapper>
+          <Home to="/">Home</Home>
+          <Journals to="/Journals">Journals</Journals>
+          <Explore to="/Explore">Explore</Explore>
+          <Login to="/Login">
+            <button
+              onClick={() => {
+                dispatch(signOut());
+                navigate("/Login");
+              }}
+            >
+              LogOut
+            </button>
+          </Login>
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <Login to="/Login">
+            <button>Login</button>
+          </Login>
+          <Register to="/Register">
+            <button>Register</button>
+          </Register>
+        </Wrapper>
+      )}
     </Container>
   );
 };

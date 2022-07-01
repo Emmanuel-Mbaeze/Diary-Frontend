@@ -6,18 +6,62 @@ import Explore from "./Components/Pages/Explore";
 import Journals from "./Components/Pages/Journals";
 import Signup from "./Components/Pages/Signup";
 import Signin from "./Components/Pages/Signin";
+import Private from "./Components/Pages/Private";
+
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/Homee" element={<Home />} />
-          <Route path="/Journals" element={<Journals />} />
-          <Route path="/Explore" element={<Explore />} />
+          <Route
+            path="/"
+            element={
+              <Private>
+                <Home />
+              </Private>
+            }
+          />
+          <Route
+            path="/landingpage"
+            element={
+              <Private>
+                <LandingPage />
+              </Private>
+            }
+          />
+          <Route
+            path="/Journals"
+            element={
+              <Private>
+                <Journals />
+              </Private>
+            }
+          />
+          <Route
+            path="/Explore"
+            element={
+              <Private>
+                <Explore />
+              </Private>
+            }
+          />
 
-          <Route path="/Register" element={<Signup />} />
-          <Route path="/Login" element={<Signin />} />
+          <Route
+            path="/Register"
+            element={
+              <Private>
+                <Signup />
+              </Private>
+            }
+          />
+          <Route
+            path="/Login"
+            element={
+              <Private>
+                <Signin />
+              </Private>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

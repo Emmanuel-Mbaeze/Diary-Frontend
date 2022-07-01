@@ -25,7 +25,7 @@ const Globalstate = createSlice({
       }
     },
     signOut: (state) => {
-      state.user = null;
+      state.signedin = null;
     },
     removeBestDiary: (state, { payload }) => {
       state.bestDiary = state.bestDiary.filter((el) => el.id !== payload.id);

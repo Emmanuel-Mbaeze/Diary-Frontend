@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { GoThreeBars } from "react-icons/go";
 import { GiCancel } from "react-icons/gi";
 import Sidebar from "./Sidebar";
+
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "../Global/Globalstate";
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.signedin);
+
   const [toggle, setToggle] = useState(true);
   console.log(toggle);
   const barChange = () => {
@@ -14,22 +21,40 @@ const Header = () => {
     <>
       <Container>
         <Wrapper>
-          <Logo to="/Homee">
+          <Logo to="/">
             <img src="/11.png" />
           </Logo>
-          <Navs>
-            <Home to="/Homee">Home</Home>
-            <Journals to="/Journals">Journals</Journals>
-            <Explore to="/Explore">Explore</Explore>
-          </Navs>
-          <Buttons>
-            <Login to="/Login">
-              <button>Login</button>
-            </Login>
-            <Register to="/Register">
-              <button>Register</button>
-            </Register>
-          </Buttons>
+          {user ? (
+            <Wrap>
+              <Navs>
+                <Home to="/">Home</Home>
+                <Journals to="/Journals">Journals</Journals>
+                <Explore to="/Explore">Explore</Explore>
+              </Navs>
+              <Buttons>
+                <Login to="/Login">
+                  <button
+                    onClick={() => {
+                      dispatch(signOut());
+                      navigate("/Login");
+                    }}
+                  >
+                    LogOut
+                  </button>
+                </Login>
+              </Buttons>
+            </Wrap>
+          ) : (
+            <Buttons>
+              <Login to="/Login">
+                <button>Login</button>
+              </Login>
+              <Register to="/Register">
+                <button>Register</button>
+              </Register>
+            </Buttons>
+          )}
+
           <Sideicon>
             {toggle ? (
               <GoThreeBars
@@ -49,6 +74,13 @@ const Header = () => {
 };
 
 export default Header;
+const Wrap = styled.div`
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: pink; */
+`;
 const Container = styled.div`
   width: 100%;
   height: 55px;
@@ -101,7 +133,7 @@ const Logo = styled(Link)`
   }
 `;
 const Navs = styled.div`
-  width: 26%;
+  width: 46%;
   /* background-color: blue; */
   height: 50px;
   display: flex;
