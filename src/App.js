@@ -6,7 +6,8 @@ import Explore from "./Components/Pages/Explore";
 import Journals from "./Components/Pages/Journals";
 import Signup from "./Components/Pages/Signup";
 import Signin from "./Components/Pages/Signin";
-import Private from "./Components/Pages/Private";
+import Private from "./Components/Global/Private";
+import Confirmverification from "./Components/Pages/Confirmverification";
 
 const App = () => {
   return (
@@ -21,14 +22,7 @@ const App = () => {
               </Private>
             }
           />
-          <Route
-            path="/landingpage"
-            element={
-              <Private>
-                <LandingPage />
-              </Private>
-            }
-          />
+          <Route path="/landingpage" element={<LandingPage />} />
           <Route
             path="/Journals"
             element={
@@ -46,22 +40,9 @@ const App = () => {
             }
           />
 
-          <Route
-            path="/Register"
-            element={
-              <Private>
-                <Signup />
-              </Private>
-            }
-          />
-          <Route
-            path="/Login"
-            element={
-              <Private>
-                <Signin />
-              </Private>
-            }
-          />
+          <Route path="/Register" element={<Signup />} />
+          <Route path="/confirm" element={<Confirmverification />} />
+          <Route path="/Login" element={<Signin />} />
         </Routes>
       </BrowserRouter>
     </div>

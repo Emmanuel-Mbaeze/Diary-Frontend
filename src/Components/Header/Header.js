@@ -30,6 +30,7 @@ const Header = () => {
                 <Home to="/">Home</Home>
                 <Journals to="/Journals">Journals</Journals>
                 <Explore to="/Explore">Explore</Explore>
+                <Confirm to="/confirm">Confirm</Confirm>
               </Navs>
               <Buttons>
                 <Login to="/Login">
@@ -161,6 +162,14 @@ const Buttons = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+`;
+const Confirm = styled(Link)`
+  text-decoration: none;
+  color: black;
+  :hover {
+    transform: scale(1.05);
+    transition: all 350ms;
+  }
 `;
 const Explore = styled(Link)`
   text-decoration: none;

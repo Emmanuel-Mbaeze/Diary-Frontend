@@ -28,7 +28,7 @@ const Signin = () => {
     const { email, password } = value;
     const local = "http://localhost:9090";
     const online = "https://i--jot-backend.herokuapp.com";
-    const url = `${online}/api/user/signin`;
+    const url = `${local}/api/user/signin`;
 
     await axios.post(url, { email, password }).then((res) => {
       dispatch(createUser(res.data.data));
