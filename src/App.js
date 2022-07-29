@@ -8,6 +8,7 @@ import Signup from "./Components/Pages/Signup";
 import Signin from "./Components/Pages/Signin";
 import Private from "./Components/Global/Private";
 import Confirmverification from "./Components/Pages/Confirmverification";
+import Check from "./Components/Pages/Check";
 
 const App = () => {
   return (
@@ -41,8 +42,12 @@ const App = () => {
           />
 
           <Route path="/Register" element={<Signup />} />
-          <Route path="/confirm" element={<Confirmverification />} />
+          <Route
+            path="/confirm/api/user/token/:id/:token"
+            element={<Confirmverification />}
+          />
           <Route path="/Login" element={<Signin />} />
+          <Route path="/Check" element={<Check />} />
         </Routes>
       </BrowserRouter>
     </div>

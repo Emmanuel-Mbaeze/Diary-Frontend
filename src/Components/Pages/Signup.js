@@ -71,7 +71,7 @@ const Signup = () => {
       console.log("Error Data:", res);
     });
 
-    navigate("/");
+    navigate("/Check");
   });
   return (
     <Container>
@@ -179,7 +179,7 @@ const ImageLabel = styled.label`
 const Image = styled.img`
   width: 100px;
   height: 100px;
-  object-fit: contain;
+  object-fit: cover;
   border: 1.5px solid #383838;
   border-radius: 100%;
   display: flex;
