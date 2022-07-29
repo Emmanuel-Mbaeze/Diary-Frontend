@@ -25,8 +25,9 @@ const Confirmverification = () => {
 
   const verifyThisUser = async () => {
     const localURL = "http://localhost:9090";
+    const onlineurl = "https://i--jot-backend.herokuapp.com";
 
-    const url = `${localURL}/api/user/verify/${id}/${token}`;
+    const url = `${onlineurl}/api/user/verify/${id}/${token}`;
     await axios.get(url);
   };
 
